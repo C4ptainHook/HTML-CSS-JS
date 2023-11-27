@@ -201,6 +201,12 @@ height: 97px;
     justify-content: space-between;
 }
 
+/*Javascript stuff*/
+#result-field{
+    text-align: center;
+    font-size: 0.9em;
+}
+
 @media (max-width:440px){
    .lower-flex{
     flex-direction: column;
