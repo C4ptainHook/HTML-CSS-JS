@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile</title>
+    <title>Call of JS</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/flex.css">
     <link rel="icon" href="icons/favicon.png">
@@ -47,6 +47,21 @@
                             Ми нескінченно вдячні нашим фанатам, друзям та колегам, які вже приєдналися до спільної справи – зупинки російської агресії.
                             Ми щасливі бути частиною такої згуртованної спільноти. Але війна ще не закінчена, а нашого ворога не зупинено. Наразі наші сім'ї та друзі або ховаються в бомбосховищах, або ж активно допомагають усім постраждалим від окупантів.
                         </p>
+                        <h5>Площа трикутника</h5>
+                        <form onsubmit="calculateArea(event)">
+                            <label for="sideA">A:</label>
+                            <input type="number" id="sideA" name="А" required><br><br>
+                        
+                            <label for="sideB">B:</label>
+                            <input type="number" id="sideB" name="B" required><br><br>
+                        
+                            <label for="sideC">C:</label>
+                            <input type="number" id="sideC" name="C" required><br><br>
+                        
+                            <button type="submit">Обчислити</button>
+                        </form>
+                        <br>
+                        <p id="result-field"></p>
                     </main>
                     <div class="right-middle-flex">
                     <div class="green container" id="div4"> 
