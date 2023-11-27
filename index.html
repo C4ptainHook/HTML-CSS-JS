@@ -47,21 +47,62 @@
                             Ми нескінченно вдячні нашим фанатам, друзям та колегам, які вже приєдналися до спільної справи – зупинки російської агресії.
                             Ми щасливі бути частиною такої згуртованної спільноти. Але війна ще не закінчена, а нашого ворога не зупинено. Наразі наші сім'ї та друзі або ховаються в бомбосховищах, або ж активно допомагають усім постраждалим від окупантів.
                         </p>
+                        <div class="triangle-container">
                         <h5>Площа трикутника</h5>
-                        <form onsubmit="calculateArea(event)">
+                        <form class="triangle-form" onsubmit="calculateArea(event)">
+                            <div class="input-element">
                             <label for="sideA">A:</label>
-                            <input type="number" id="sideA" name="А" required><br><br>
-                        
+                            <input type="number" id="sideA" name="A" required><br>
+                            </div>
+
+                            <div class="input-element">
                             <label for="sideB">B:</label>
-                            <input type="number" id="sideB" name="B" required><br><br>
-                        
+                            <input type="number" id="sideB" name="B" required><br>
+                            </div>
+                            <div class="input-element">
                             <label for="sideC">C:</label>
-                            <input type="number" id="sideC" name="C" required><br><br>
-                        
+                            <input type="number" id="sideC" name="C" required><br>
+                            </div>
                             <button type="submit">Обчислити</button>
                         </form>
                         <br>
                         <p id="result-field"></p>
+                        </div>
+                        <h5>Мінімальне та максимальне значення</h5>
+                        <form class="min-max-form">
+                            <div class="inner-form-div">
+                            <label for="number1">Число 1:</label>
+                            <input class="min-max-input" type="number" id="number1" name="number1" required>
+                        
+                            <label for="number2">Число 2:</label>
+                            <input class="min-max-input" type="number" id="number2" name="number2" required>
+                        
+                            <label for="number3">Число 3:</label>
+                            <input class="min-max-input" type="number" id="number3" name="number3" required>
+
+                            <label for="number4">Число 4:</label>
+                            <input class="min-max-input" type="number" id="number4" name="number4" required>
+                            
+                            <label for="number5">Число 5:</label>
+                            <input class="min-max-input" type="number" id="number5" name="number5" required>
+
+                            <label for="number6">Число 6:</label>
+                            <input class="min-max-input" type="number" id="number6" name="number6" required>
+
+                            <label for="number7">Число 7:</label>
+                            <input class="min-max-input" type="number" id="number7" name="number7" required>
+
+                            <label for="number8">Число 8:</label>
+                            <input class="min-max-input" type="number" id="number8" name="number8" required>
+
+                            <label for="number9">Число 9:</label>
+                            <input class="min-max-input" type="number" id="number9" name="number9" required>
+
+                            <label for="number10">Число 10:</label>
+                            <input class="min-max-input" type="number" id="number10" name="number10" required>
+                            </div>
+                            <button type="submit">Визначити min max</button>
+                        </form>
                     </main>
                     <div class="right-middle-flex">
                     <div class="green container" id="div4"> 
