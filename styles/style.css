@@ -214,6 +214,24 @@ height: 97px;
     align-items: center;
     overflow: hidden;
 }
+form button{
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    max-width: fit-content;
+    height: 1.7rem;
+    background-color: rgb(114, 20, 16);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    opacity: 0.8;
+}
+
+form button:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
+    opacity: 1;
+    background-color: rgb(203, 35, 28);
+}
 
 .triangle-form{
     display: flex;
@@ -226,19 +244,28 @@ height: 97px;
 }
 .triangle-form button{
     width: 100%;
- }
+}
  
 #result-field{
     text-align: center;
     font-size: 0.9em;
 }
-.inner-form-div{
+.min-max-container{
+    display: flex;
+    flex-direction: column;
+}
+.min-max-form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+.min-max-elements-container{
     display: flex;
     flex-flow: row wrap;
+    gap: 0.5rem;
 }
-
-.min-max-form .min-max-input{
-    max-width: 5rem;
+.min-max-form button{
+    max-width: 20rem;
 }
 
 @media (max-width:440px){

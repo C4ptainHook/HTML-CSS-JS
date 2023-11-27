@@ -49,7 +49,7 @@
                         </p>
                         <div class="triangle-container">
                         <h5>Площа трикутника</h5>
-                        <form class="triangle-form" onsubmit="calculateArea(event)">
+                        <form class="triangle-form" onsubmit="calculate_area(event)">
                             <div class="input-element">
                             <label for="sideA">A:</label>
                             <input type="number" id="sideA" name="A" required><br>
@@ -68,41 +68,54 @@
                         <br>
                         <p id="result-field"></p>
                         </div>
+                        <div class="min-max-container">
                         <h5>Мінімальне та максимальне значення</h5>
-                        <form class="min-max-form">
-                            <div class="inner-form-div">
-                            <label for="number1">Число 1:</label>
-                            <input class="min-max-input" type="number" id="number1" name="number1" required>
-                        
-                            <label for="number2">Число 2:</label>
-                            <input class="min-max-input" type="number" id="number2" name="number2" required>
-                        
-                            <label for="number3">Число 3:</label>
-                            <input class="min-max-input" type="number" id="number3" name="number3" required>
-
-                            <label for="number4">Число 4:</label>
-                            <input class="min-max-input" type="number" id="number4" name="number4" required>
-                            
-                            <label for="number5">Число 5:</label>
-                            <input class="min-max-input" type="number" id="number5" name="number5" required>
-
-                            <label for="number6">Число 6:</label>
-                            <input class="min-max-input" type="number" id="number6" name="number6" required>
-
-                            <label for="number7">Число 7:</label>
-                            <input class="min-max-input" type="number" id="number7" name="number7" required>
-
-                            <label for="number8">Число 8:</label>
-                            <input class="min-max-input" type="number" id="number8" name="number8" required>
-
-                            <label for="number9">Число 9:</label>
-                            <input class="min-max-input" type="number" id="number9" name="number9" required>
-
-                            <label for="number10">Число 10:</label>
-                            <input class="min-max-input" type="number" id="number10" name="number10" required>
+                        <form class="min-max-form" autocomplete="off">
+                            <div class="min-max-elements-container">
+                                <div class="input-element">
+                                <label for="number1">Число 1:</label>
+                                <input class="min-max-input" type="number" id="number1" name="number1" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number2">Число 2:</label>
+                                <input class="min-max-input" type="number" id="number2" name="number2" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number3">Число 3:</label>
+                                <input class="min-max-input" type="number" id="number3" name="number3" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number4">Число 4:</label>
+                                <input class="min-max-input" type="number" id="number4" name="number4" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number5">Число 5:</label>
+                                <input class="min-max-input" type="number" id="number5" name="number5" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number6">Число 6:</label>
+                                <input class="min-max-input" type="number" id="number6" name="number6" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number7">Число 7:</label>
+                                <input class="min-max-input" type="number" id="number7" name="number7" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number8">Число 8:</label>
+                                <input class="min-max-input" type="number" id="number8" name="number8" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number9">Число 9:</label>
+                                <input class="min-max-input" type="number" id="number9" name="number9" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number10">Число 10:</label>
+                                <input class="min-max-input" type="number" id="number10" name="number10" required>
+                                </div>
                             </div>
-                            <button type="submit">Визначити min max</button>
+                                <button type="submit">Визначити min max</button>
                         </form>
+                        </div>
                     </main>
                     <div class="right-middle-flex">
                     <div class="green container" id="div4"> 
