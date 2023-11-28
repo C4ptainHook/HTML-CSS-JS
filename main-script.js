@@ -1,4 +1,6 @@
-/*task 1*/
+/*task 1
+Поміняйте місцями контент блоків «4» та «5».
+*/
 function content_swap(){
 const div4 = document.getElementById('div4');
 const div5 = document.getElementById('div5');
@@ -9,7 +11,11 @@ div4.innerHTML = div5.innerHTML;
 div5.innerHTML = div4Content;
 }
 
-/*task 2*/
+/*task 2
+Напишіть функцію, яка обчислює площу
+трикутника, беручи необхідні значення із
+відповідних змінних у скрипті, і виводить
+отриманий результат в кінці контенту в блоці «3».*/
 function calculate_area(event) {
     event.preventDefault();
 
@@ -26,7 +32,20 @@ function calculate_area(event) {
     }
 }
 
-/*task 3*/
+/*task 3
+Напишіть скрипт, який визначає кількість
+мінімальних чисел із 10 значень, беручи необхідні
+значення із відповідної форми в блоці «3», а
+отриманий результат виводить за допомогою
+діалогового вікна і зберігає в cookies, причому:
+а) при оновленні веб-сторінки в броузері користувачу за допомогою
+діалогового вікна виводиться інформація, збережена в cookies, із
+інформуванням, що після натискання кнопки «ОК» відбудеться видалення
+даних із cookies, і не виводиться згадана вище форма;
+б) при натисканні кнопки «ОК» відповідні cookies видаляються, і виводиться
+наступне діалогове вікно із повідомленням, що cookies видалено, а натискання
+кнопки «ОК» перезавантажує веб-сторінку з початковим станом із наявною
+формою для введення даних.*/
 function get_min_max(){
     let numbers = [];
     for(let i = 1; i<=10; i++){
@@ -106,6 +125,75 @@ document.addEventListener('DOMContentLoaded', () => {
    }
 })();
 
+/*Task 4
+Напишіть скрипт, який при настанні події load змінює колір тексту блоку «3» на
+вказаний користувачем і зберігає відповідне значення кольору в localStorage
+броузера так, щоб при наступному відкриванні веб-сторінки значення кольору
+тексту блоку «3» встановлювалось із збереженого значення в localStorage.*/
+import 'vanilla-colorful';
+(() => {
+  const updateBorder = (color) => {
+    document
+      .querySelector('html')
+      .setAttribute('style', `--border: 2px solid ${color}`);
+  };
+
+  // Document loaded, set color from localStorage
+  const color = localStorage.getItem('color');
+  if (color) {
+    updateBorder(color);
+  }
+
+  const focusableElements = Array.from(
+    document.querySelectorAll(
+      'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    )
+  );
+
+  focusableElements.forEach((element) => {
+    element.addEventListener('focus', () => {
+      const color = localStorage.getItem('color');
+      if (color) {
+        updateBorder(color);
+      }
+    });
+  });
+
+  const picker = document.querySelector('hex-color-picker');
+  const form = document.querySelector('.form-color');
+  const result = document.querySelector('.form-color__result');
+
+  function invertHex(hex) {
+    return (Number(`0x1${hex}`) ^ 0xffffff)
+      .toString(16)
+      .substr(1)
+      .toUpperCase();
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const pickedColor = picker.color;
+    result.setAttribute('style', 'display: block;');
+    result.innerHTML = `You have chosen <span style="display: inline-block; background-color: ${pickedColor}; color: #${invertHex(
+      pickedColor.slice(1)
+    )}">${pickedColor}</span> color`;
+
+    localStorage.setItem('color', pickedColor);
+  });
+})();
+
+/*Task 5
+Напишіть скрипт створення ненумерованого списку:
+а) необхідні елементи форми появляються у відповідних номерних блоках (1..6)
+внаслідок подвійного кліку на довільному контенті блоку;
+б) кількість пунктів ненумерованого списку необмежена;
+в) поруч розміщується кнопка, внаслідок натискання на яку внесені дані
+ненумерованого списку зберігаються в localStorage броузера (структуровано на
+ваш розсуд), а сам список заміщує початковий вміст відповідного номерного
+блока;
+г) перезавантаження веб-сторінки призводить до видалення нового вмісту із
+localStorage броузера.*/
 
 
 

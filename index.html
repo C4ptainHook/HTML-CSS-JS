@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles/flex.css">
     <link rel="icon" href="icons/favicon.png">
     <script src="https://kit.fontawesome.com/68edd5728c.js" crossorigin="anonymous"></script>
-    <script src="main-script.js"></script>
 </head>
 <body onload="content_swap()">
     <div class="main-flex">
@@ -74,47 +73,50 @@
                             <div class="min-max-elements-container">
                                 <div class="input-element">
                                 <label for="number1">Число 1:</label>
-                                <input class="min-max-input" type="number" id="number1" name="number1" required>
+                                <input class="min-max-input" type="number" id="number1" name="number1" value="40" required>
                                 </div>
                                 <div class="input-element">
                                 <label for="number2">Число 2:</label>
-                                <input class="min-max-input" type="number" id="number2" name="number2" required>
+                                <input class="min-max-input" type="number" id="number2" name="number2" value="-5" required>
                                 </div>
                                 <div class="input-element">
                                 <label for="number3">Число 3:</label>
-                                <input class="min-max-input" type="number" id="number3" name="number3" required>
+                                <input class="min-max-input" type="number" id="number3" name="number3" value="70" required>
                                 </div>
                                 <div class="input-element">
                                 <label for="number4">Число 4:</label>
-                                <input class="min-max-input" type="number" id="number4" name="number4" required>
+                                <input class="min-max-input" type="number" id="number4" name="number4" value="20" required>
                                 </div>
                                 <div class="input-element">
                                 <label for="number5">Число 5:</label>
-                                <input class="min-max-input" type="number" id="number5" name="number5" required>
+                                <input class="min-max-input" type="number" id="number5" name="number5" value="-100" required>
                                 </div>
                                 <div class="input-element">
                                 <label for="number6">Число 6:</label>
-                                <input class="min-max-input" type="number" id="number6" name="number6" required>
+                                <input class="min-max-input" type="number" id="number6" name="number6" value="20" required>
                                 </div>
                                 <div class="input-element">
                                 <label for="number7">Число 7:</label>
-                                <input class="min-max-input" type="number" id="number7" name="number7" required>
+                                <input class="min-max-input" type="number" id="number7" name="number7" value="80" required>
                                 </div>
                                 <div class="input-element">
                                 <label for="number8">Число 8:</label>
-                                <input class="min-max-input" type="number" id="number8" name="number8" required>
+                                <input class="min-max-input" type="number" id="number8" name="number8" value="41" required>
                                 </div>
                                 <div class="input-element">
                                 <label for="number9">Число 9:</label>
-                                <input class="min-max-input" type="number" id="number9" name="number9" required>
+                                <input class="min-max-input" type="number" id="number9" name="number9" value="15" required>
                                 </div>
                                 <div class="input-element">
                                 <label for="number10">Число 10:</label>
-                                <input class="min-max-input" type="number" id="number10" name="number10" required>
+                                <input class="min-max-input" type="number" id="number10" name="number10" value="25" required>
                                 </div>
                             </div>
                                 <button type="submit">Визначити min max</button>
                         </form>
+                        </div>
+                        <div>
+                            <hex-color-picker color="#1e88e5"></hex-color-picker>
                         </div>
                     </main>
                     <div class="right-middle-flex">
@@ -142,6 +144,8 @@
             </div>
         </div>
     </div>
+    <script type="module" src="https://jspm.dev/vanilla-colorful"></script>
+    <script src="main-script.js"></script>
 </body>
 </html>
 
