@@ -20,7 +20,7 @@ h4{
     margin-bottom: 100px;
     padding: 0;
 }
-    
+
 .white{
     background-color: #ffffff;
 }
@@ -271,7 +271,23 @@ form button:hover{
 
 .color-picker-form{
     display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5rem 0rem;
+}
+.color-picker-control{
+    display: flex;
     flex-flow: row wrap-reverse;
+    gap: 0.5rem;
+}
+
+.color-picker-control #color-input{
+    border-radius: 0.2rem;
+}
+
+.color-picker-control #color-output{
+    border-radius: 0.5rem;
 }
 @media (max-width:440px){
    .lower-flex{

@@ -167,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     colorOutput.value = pickedColor;
 
     localStorage.setItem('color', pickedColor);
+    location.reload();
   });
 })();
 
