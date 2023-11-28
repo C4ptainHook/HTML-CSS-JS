@@ -34,12 +34,10 @@ function get_min_max(){
     }
     const minValue = Math.min(...numbers)
     const maxValue = Math.max(...numbers)
-    alert(`${minValue} in get min max ${maxValue}`); //debug
     return {minValue, maxValue};
 }
 
 function register_cookies(minValue, maxValue){
-    alert(`${minValue} in register ${maxValue}`); //debug
    document.cookie = `minValue=${minValue};`;
    document.cookie = `maxValue=${maxValue};`;
 }
@@ -53,7 +51,6 @@ function retrieve_cookies(){
     }
     const min = +cookie_token.minValue;
     const max = +cookie_token.maxValue;
-    alert(`${min} in retrieve ${max}`); //debug
     return {min, max};
  }
 
@@ -61,26 +58,25 @@ function retrieve_cookies(){
     document.cookie = `maxValue=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
     document.cookie = `minValue=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
  }
+ 
+ function hide_min_max_form(){
+    const min_max_to_hide = document.querySelector('.min-max-container');
+    min_max_to_hide.remove();
+ }
 
  function show_results(){
     const {min, max} = retrieve_cookies();
     alert(`Мінімальне значення = ${min}\n Максимальне значення = ${max}`);
  }
 
- function is_min_max_exists(){
-    const {min, max} = retrieve_cookies();
-    if(min != null && max != null){
-        return true;
+ function is_min_max_exists() {
+        const { min, max } = retrieve_cookies();
+        return !isNaN(min) && !isNaN(max);
     }
-    else{
-        return false;
-    }
- }
 
  function form_submission(event) {
     event.preventDefault();
     const { minValue, maxValue } = get_min_max();
-    alert(`Min: ${minValue}, before register Max: ${maxValue}`); //debug
     register_cookies(minValue, maxValue);
     show_results();
  }
@@ -91,9 +87,11 @@ function retrieve_cookies(){
     const message = `${result_message}\n Видалити поточні значення?`;
     if(confirm(message)){
         delete_cookies();
+        location.reload();
     }
     else{
-        alert('Файли кукі не були очищенні - форма min/max не доступна.\nДля використання форми перезавантажте сторінку.')
+        alert('Файли кукі не були очищенні - форма min/max не доступна.\nДля використання форми перезавантажте сторінку.');
+        hide_min_max_form();
     }
  }
 
@@ -107,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     remind_from_cookies();
    }
 })();
+
 
 
 
