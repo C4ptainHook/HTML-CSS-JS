@@ -269,6 +269,10 @@ form button:hover{
     max-width: 20rem;
 }
 
+.color-picker-form{
+    display: flex;
+    flex-flow: row wrap-reverse;
+}
 @media (max-width:440px){
    .lower-flex{
     flex-direction: column;
