@@ -130,58 +130,58 @@ document.addEventListener('DOMContentLoaded', () => {
 вказаний користувачем і зберігає відповідне значення кольору в localStorage
 броузера так, щоб при наступному відкриванні веб-сторінки значення кольору
 тексту блоку «3» встановлювалось із збереженого значення в localStorage.*/
-import 'vanilla-colorful';
-(() => {
-  const updateBorder = (color) => {
-    document
-      .querySelector('html')
-      .setAttribute('style', `--border: 2px solid ${color}`);
-  };
+// import 'vanilla-colorful';
+// (() => {
+//   const updateBorder = (color) => {
+//     document
+//       .querySelector('html')
+//       .setAttribute('style', `--border: 2px solid ${color}`);
+//   };
 
-  // Document loaded, set color from localStorage
-  const color = localStorage.getItem('color');
-  if (color) {
-    updateBorder(color);
-  }
+//   // Document loaded, set color from localStorage
+//   const color = localStorage.getItem('color');
+//   if (color) {
+//     updateBorder(color);
+//   }
 
-  const focusableElements = Array.from(
-    document.querySelectorAll(
-      'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    )
-  );
+//   const focusableElements = Array.from(
+//     document.querySelectorAll(
+//       'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+//     )
+//   );
 
-  focusableElements.forEach((element) => {
-    element.addEventListener('focus', () => {
-      const color = localStorage.getItem('color');
-      if (color) {
-        updateBorder(color);
-      }
-    });
-  });
+//   focusableElements.forEach((element) => {
+//     element.addEventListener('focus', () => {
+//       const color = localStorage.getItem('color');
+//       if (color) {
+//         updateBorder(color);
+//       }
+//     });
+//   });
 
-  const picker = document.querySelector('hex-color-picker');
-  const form = document.querySelector('.form-color');
-  const result = document.querySelector('.form-color__result');
+//   const picker = document.querySelector('hex-color-picker');
+//   const form = document.querySelector('.form-color');
+//   const result = document.querySelector('.form-color__result');
 
-  function invertHex(hex) {
-    return (Number(`0x1${hex}`) ^ 0xffffff)
-      .toString(16)
-      .substr(1)
-      .toUpperCase();
-  }
+//   function invertHex(hex) {
+//     return (Number(`0x1${hex}`) ^ 0xffffff)
+//       .toString(16)
+//       .substr(1)
+//       .toUpperCase();
+//   }
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+//   form.addEventListener('submit', (e) => {
+//     e.preventDefault();
 
-    const pickedColor = picker.color;
-    result.setAttribute('style', 'display: block;');
-    result.innerHTML = `You have chosen <span style="display: inline-block; background-color: ${pickedColor}; color: #${invertHex(
-      pickedColor.slice(1)
-    )}">${pickedColor}</span> color`;
+//     const pickedColor = picker.color;
+//     result.setAttribute('style', 'display: block;');
+//     result.innerHTML = `You have chosen <span style="display: inline-block; background-color: ${pickedColor}; color: #${invertHex(
+//       pickedColor.slice(1)
+//     )}">${pickedColor}</span> color`;
 
-    localStorage.setItem('color', pickedColor);
-  });
-})();
+//     localStorage.setItem('color', pickedColor);
+//   });
+// })();
 
 /*Task 5
 Напишіть скрипт створення ненумерованого списку:
