@@ -137,26 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('main').style.color = color;
   }
   
-  // Document loaded, set color from localStorage
+  //Змінює колір тексту при завантаженні сторінки
   const color = localStorage.getItem('color');
   if (color) {
     changeTextColor(color);
+    let colorOutput = document.getElementById('color-output');
+    colorOutput.value = color;
   }
-
-  const loadedTargets = Array.from(
-    document.querySelectorAll(
-      'p, button, input, select, textarea'
-    )
-  );
-
-  loadedTargets.forEach((element) => {
-    element.addEventListener('load', () => {
-      const color = localStorage.getItem('color');
-      if (color) {
-        changeTextColor(color);
-      }
-    });
-  });
 
   const form = document.querySelector('.color-picker-form');
 
@@ -165,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const pickedColor = document.getElementById('color-input').value;
     let colorOutput = document.getElementById('color-output');
     colorOutput.value = pickedColor;
-
     localStorage.setItem('color', pickedColor);
     location.reload();
   });
