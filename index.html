@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile</title>
+    <title>Call of JS</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/flex.css">
     <link rel="icon" href="icons/favicon.png">
     <script src="https://kit.fontawesome.com/68edd5728c.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="content_swap()">
     <div class="main-flex">
-        <header class="container" id="div1">
+        <header class="container" id="div1" data-block-number="1">
             <div id="text-quote-header">
                 <img id="on-page-icon" src="icons/bloodSucker.png" alt="icon">
             </div>
             <h2 class="quote_title">FANDOM</h2>
         </header>
         <div class="lower-flex">
-            <aside class="violet container" id="div2">
+            <aside class="violet container" id="div2" data-block-number="2">
                 <div id="nav-container">
                    <nav>
                     <a>
@@ -38,7 +38,7 @@
             </aside>
             <div class="right-lower-flex">
                 <div class="middle-flex">
-                    <main class="dark container" id="div3">
+                    <main class="dark container" id="div3" data-block-number="3">
                         <h4>Допомога Україні</h4>
                         <p> Народ України продовжує відстоювати своє право на незалежність проти окупаційних військ Російської Федерації.
                             Вони без попередження почали бомбардувати наші міста, наступаючи з півночі, сходу та півдня. 
@@ -46,12 +46,89 @@
                             Ми нескінченно вдячні нашим фанатам, друзям та колегам, які вже приєдналися до спільної справи – зупинки російської агресії.
                             Ми щасливі бути частиною такої згуртованної спільноти. Але війна ще не закінчена, а нашого ворога не зупинено. Наразі наші сім'ї та друзі або ховаються в бомбосховищах, або ж активно допомагають усім постраждалим від окупантів.
                         </p>
+                        <div class="triangle-container">
+                        <h5>Площа трикутника</h5>
+                        <form class="triangle-form" onsubmit="calculate_area(event)">
+                            <div class="input-element">
+                            <label for="sideA">A:</label>
+                            <input type="number" id="sideA" name="A" required><br>
+                            </div>
+
+                            <div class="input-element">
+                            <label for="sideB">B:</label>
+                            <input type="number" id="sideB" name="B" required><br>
+                            </div>
+                            <div class="input-element">
+                            <label for="sideC">C:</label>
+                            <input type="number" id="sideC" name="C" required><br>
+                            </div>
+                            <button type="submit">Обчислити</button>
+                        </form>
+                        <br>
+                        <p id="result-field"></p>
+                        </div>
+                        <div class="min-max-container">
+                        <h5>Мінімальне та максимальне значення</h5>
+                        <form class="min-max-form" autocomplete="off">
+                            <div class="min-max-elements-container">
+                                <div class="input-element">
+                                <label for="number1">Число 1:</label>
+                                <input class="min-max-input" type="number" id="number1" name="number1" value="40" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number2">Число 2:</label>
+                                <input class="min-max-input" type="number" id="number2" name="number2" value="-5" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number3">Число 3:</label>
+                                <input class="min-max-input" type="number" id="number3" name="number3" value="70" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number4">Число 4:</label>
+                                <input class="min-max-input" type="number" id="number4" name="number4" value="20" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number5">Число 5:</label>
+                                <input class="min-max-input" type="number" id="number5" name="number5" value="-100" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number6">Число 6:</label>
+                                <input class="min-max-input" type="number" id="number6" name="number6" value="20" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number7">Число 7:</label>
+                                <input class="min-max-input" type="number" id="number7" name="number7" value="80" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number8">Число 8:</label>
+                                <input class="min-max-input" type="number" id="number8" name="number8" value="41" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number9">Число 9:</label>
+                                <input class="min-max-input" type="number" id="number9" name="number9" value="15" required>
+                                </div>
+                                <div class="input-element">
+                                <label for="number10">Число 10:</label>
+                                <input class="min-max-input" type="number" id="number10" name="number10" value="25" required>
+                                </div>
+                            </div>
+                                <button type="submit">Визначити min max</button>
+                        </form>
+                        </div>
+                        <form class="color-picker-form">
+                        <h5>Оберіть колір тексту</h5>
+                        <div class="color-picker-control">
+                            <input id="color-output" type="text" class="picker__input">
+                            <input id="color-input" type="color" value="#fffff" class="picker__input">
+                        </div>
+                        <button type="submit">Встановити</button>
+                        </form>
                     </main>
                     <div class="right-middle-flex">
-                    <div class="green container" id="div4"> 
+                    <div class="green container" id="div4" data-block-number="4"> 
                         <p>Дізнайтесь більше цікавої інформації щодо Всесвіту S.T.A.L.K.E.R. рідною мовою. В енциклопедії налічується 1172 статті, і ви можете допомогти проекту у його поліпшенні! Приєднуйтесь!</p>
                     </div>
-                    <div class="violet container" id="div5">
+                    <div class="violet container" id="div5" data-block-number="5">
                         <p id="follow_manifestation">
                             Follow Us
                         </p>
@@ -63,7 +140,7 @@
                     </div>
                     </div>
                 </div>
-            <footer class="container" id="div6">
+            <footer class="container" id="div6" data-block-number="6">
                 <div id="text-quote-footer">
                     <img id="on-page-icon" src="icons/bloodSucker.png" alt="icon">
                 </div>
@@ -72,6 +149,8 @@
             </div>
         </div>
     </div>
+    <script type="module" src="https://jspm.dev/vanilla-colorful"></script>
+    <script src="main-script.js"></script>
 </body>
 </html>
 
