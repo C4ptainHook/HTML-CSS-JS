@@ -3,7 +3,9 @@ body{
     padding: 0; 
     overflow-x: hidden;
 }
-
+:root{
+    overflow-x: hidden;
+}
 p{
     margin: 0px;
 }
@@ -263,6 +265,7 @@ form button:hover{
 .min-max-elements-container{
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
     gap: 0.5rem;
 }
 .min-max-form button{
