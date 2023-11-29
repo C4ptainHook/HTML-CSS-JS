@@ -183,6 +183,44 @@ document.addEventListener('DOMContentLoaded', () => {
 г) перезавантаження веб-сторінки призводить до видалення нового вмісту із
 localStorage броузера.*/
 
+function createUnorderedList(content) {
+  let listItems = content.split('\n').map(item => `<li>${item.trim()}</li>`).join('');
+  return `<ul class="scrollable-list">${listItems}</ul>`;
+}
+
+function addListForm(event) {
+  event.preventDefault();
+  let targetBlock = event.target.closest('#div1, #div2, #div3, #div4, #div5, #div6');
+  if (targetBlock) {
+      let formHTML = `
+          <form class="list-input-form">
+              <label for="userInput">Додайте елементи списку (1 елемент на рядок):</label>
+              <textarea id="userInput" class="user-input" rows="2" required></textarea>
+              <button type="submit">Save</button>
+          </form>
+      `;
+      targetBlock.insertAdjacentHTML('beforeend', formHTML);
+
+      let form = targetBlock.querySelector('.list-input-form');
+      let userInputElement = form.querySelector('#userInput');
+
+      form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          let userInput = userInputElement.value;
+          let unorderedList = createUnorderedList(userInput);
+          targetBlock.innerHTML = unorderedList;
+          localStorage.setItem(`block_${targetBlock.dataset.blockNumber}_content`, unorderedList);
+      });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.addEventListener("dblclick", (event) => {
+      addListForm(event);
+  });
+});
+
+
 
 
 
