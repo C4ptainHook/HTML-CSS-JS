@@ -196,7 +196,7 @@ function addListForm(event) {
           <form class="list-input-form">
               <label for="userInput">Додайте елементи списку (1 елемент на рядок):</label>
               <textarea id="userInput" class="user-input" rows="2" required></textarea>
-              <button type="submit">Save</button>
+              <button type="submit">Зберегти</button>
           </form>
       `;
       targetBlock.insertAdjacentHTML('beforeend', formHTML);
@@ -209,20 +209,25 @@ function addListForm(event) {
           let userInput = userInputElement.value;
           let unorderedList = createUnorderedList(userInput);
           targetBlock.innerHTML = unorderedList;
-          localStorage.setItem(`block_${targetBlock.dataset.blockNumber}_content`, unorderedList);
+          localStorage.setItem(`block_${targetBlock.dataset.blockNumber}_list`, unorderedList);
       });
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   document.body.addEventListener("dblclick", (event) => {
+    event.preventDefault();
       addListForm(event);
   });
 });
 
 
-
-
+  window.addEventListener('beforeunload', () => {
+      for(let i = 1; i<=6; i++)
+      {
+        localStorage.removeItem(`block_${i}_list`);
+      }
+  });
 
 
 
